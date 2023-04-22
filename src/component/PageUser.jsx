@@ -5,7 +5,7 @@ export default function PageUser(props) {
  
   return (
     <div>
-      <h1>{`welcomes:${props.fullName}`}</h1>
+      <h1>{`welcome:${props.fullName}`}</h1>
 <button className='button' onClick={()=>{alert(props.money)}}>Balance</button> <Link to={`/action${props.fullName}`}><button className='button' >Action</button></Link>
 <br />
 <br />
