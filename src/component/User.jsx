@@ -13,6 +13,7 @@ export default function (props) {
 
 
 <h1 id='user'>user Name :{props.fullName} id : {props.id}</h1>
+<h3>balance : {props.money}</h3>
 <h2 style={{position:'relative',top:'-50px'}}>All Product </h2>
 
 {props.products.map((val,index)=>{
