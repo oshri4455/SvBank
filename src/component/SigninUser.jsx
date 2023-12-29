@@ -3,6 +3,7 @@ import PageBankai from './PageBankai'
 import { Link, useNavigate } from 'react-router-dom'
 import PageUser from './PageUser'
 import './style.css'
+import img from './m.jpg'
 export default function SigninUser(props) {
   const [userName,setUserName] = useState('')
   const [password,setPassword] = useState('')
@@ -35,7 +36,7 @@ const login = ()=>{
       return
     }
     else{
-      nav(`user${val.fullName}`)
+      nav(`user/${val.fullName}`)
     }
 
     
@@ -53,7 +54,7 @@ const login = ()=>{
 
   return (
     <div id='div1'>
-<h1>Sv Bank</h1>
+<h1>Sign In</h1>
 <br />
 <br />
 <input className='inpt' onChange={(e)=>{setUserName(e.target.value)}} type="text" placeholder='User Name' />
@@ -62,13 +63,13 @@ const login = ()=>{
 <input className='inpt'  onChange={(e)=>{setPassword(e.target.value)}}  type="password"  placeholder='Password'/>
 <br />
 <br />
-<Link to={'/register'} ><a href="">create new user</a></Link>
+<Link to={'/register'} ><a  href="">create new user</a></Link>
 <br />
 <br />
 <button id='buttonLogin' onClick={()=>{login(userName,password);loginAdmin(userName,password)}}>Enter</button>
 
 <h2 id='m' ></h2>
-
+<img id='img' src={img}alt="" />
     </div>
   )
 }

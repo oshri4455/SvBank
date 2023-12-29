@@ -1,16 +1,27 @@
 @media(min-width:1200px){
 
+h1{
+    color:white;
+}
+#img{
+    width: 500px;
+    height: 100px;
+    position: relative;
+    top: 60px;
+    border-radius: 70px;
+}
 
-
-#div1{
+#div1 {
     width: 500px;
     height: 500px;
     border: 2px solid black;
-
+    border-radius: 50px;
     position: absolute;
-    left: 700px;
-    top: 150px;
-    background-color: whitesmoke;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('./b.jpg');
+    background-size: cover;
 }
 #div2{
     width: 500px;
@@ -20,7 +31,18 @@
     position: absolute;
     left: 700px;
     top: 150px;
-    background-color: whitesmoke;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('./b.jpg');
+    background-size: cover;
+}
+#h1a{
+    color: black;
+}
+#title{
+    color: aquamarine;
+    font-size: 60px;
 }
 #del{
     background-color: black;
@@ -28,6 +50,10 @@
     position: relative;
     right: 260px;
     top: -50px;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 #m{
     font-size:20px;
@@ -47,7 +73,9 @@ top: -0px;
     background-color: red;
  
 }
-
+#show:hover{
+    background-color: white;
+}
 
 
 
@@ -79,8 +107,10 @@ body{
 width: 150px;
 height: 100px;
 margin: 30px;
-background-color: blue;
-color: green;
+border-radius: 50xpx;
+background-color: rgb(7, 239, 7);
+color:black ;
+border-radius: 40px;
 font-size: 30px;
 
 
@@ -89,18 +119,19 @@ font-size: 30px;
 width: 150px;
 height: 100px;
 margin: 30px;
-background-color: blue;
-color: green;
+background-color: rgb(7, 239, 7);
+color:black ;
 font-size: 30px;
 position: relative;
 top: -18px;
+border-radius: 40px;
 }
 
 .button:hover{
-    background-color: black;
+    background-color: wheat;
 }
 #button2:hover{
-    background-color: black;
+    background-color: wheat;
 }
 .inpt1{
     width: 200px;
@@ -123,10 +154,6 @@ top: -18px;
     position: relative;
     top: 20px;
 }
-#cancel{
-    position: relative;
-    top: 20px; 
-}
 
 
 #buttonDetail{
@@ -136,30 +163,63 @@ top: -18px;
     background-color: red;
 }
 
- td {
-    position: relative;
-   top: -50px;
-    text-align: left;
-    width: 200px;
-    border-collapse: collapse;
-    height: 50px;
-    border: 3px solid black;
-    border-collapse: collapse;
-    position: relative;
-   color: red;
-    font-size: 30px;
-  
-    left: 665px;
-}
+
 #cancel{
     position: relative;
 width: 120px;
 height: 50px;
     background-color: black;
     color: white;
-top: -30px;
+top: 20px;
+
+}
+table {
+    border-collapse: collapse; /* מאחד את הגבולות של התאים */
+    width: 500px; /* רוחב הטבלה */
+    margin: auto; /* ממרכז את הטבלה בעמוד */
 }
 
+td {
+    border: 3px solid skyblue; /* גבול לכל תא */
+    height: 50px; /* גובה כל תא */
+    text-align: left; /* יישור טקסט לשמאל */
+    font-size: 30px; /* גודל פונט */
+    color: red; /* צבע הפונט */
+    text-align: center;
+    
+}
+td:hover{
+    background-color: white;
+}
+th{
+    font-size: 40px;
+    color:white
+}
+.container {
+    position: relative;
+    height: 100vh;
+  }
+  
+  #cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    border: 2px solid white;
+    background-color: rgb(26, 159, 128);
+    border-radius: 50px;
+  }
+#buttonExit{
+    width: 80px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 400px;
+    top: -140px;
+}
 
 h2{
     position: relative;

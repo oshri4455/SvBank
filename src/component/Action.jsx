@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function (props) {
   const [price,setprice] = useState(0)
-  const [products,setproducts]=useState('')
+  const [product,setproducts]=useState('')
 const nav = useNavigate()
   const checkProducts = () => {
     const newBalance = props.money - price;
@@ -14,16 +14,17 @@ const nav = useNavigate()
       alert('There is not enough money in the account');
     } else {
       alert('Product added');
-      props.addProducts(props.index, products, price, newBalance);
+      props.addProducts(props.index, product, price, newBalance);
       props.updateUserMoney(newBalance);
       console.log('Price:', price);
-      nav(`/user${props.fullName}`)
+      nav(`/user/${props.fullName}`)
 
     }
   }
   return (
 
     <div>
+      <h1>Action</h1>
 <input className='inpt1' onChange={(e)=>{setprice(e.target.value)}} type="number" placeholder='Enter price'  />
  <br />
  <br />

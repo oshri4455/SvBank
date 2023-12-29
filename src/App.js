@@ -8,7 +8,7 @@ import PageBankai from './component/PageBankai';
 import PageUser from './component/PageUser';
 import Action from './component/Action';
 import Edit from './component/Edit'
-import Details from './component/Details'
+
 import {Provider} from './contextApi'
 import User from './component/User';
 import MoneyTransfer from './component/MoneyTransfer';
@@ -43,14 +43,22 @@ setUserName([...userName,temp])
 
 
  
-  const addProducts =(index,pr,p)=>{
-    let temp = {products:pr,price:p}
-    userName[index].products.push(temp)
-    setUserName([...userName])
-    
-    
-}
+const addProducts = (index, pr, p) => {
+  let newUsers = [...userName]; // יצירת עותק של המערך הנוכחי של userName
+  let userToUpdate = {...newUsers[index]}; // יצירת עותק של המשתמש הספציפי
 
+  let newProduct = { product: pr, price: p }; // יצירת אובייקט מוצר חדש
+
+  if (!userToUpdate.products) {
+    userToUpdate.products = []; // אם אין מערך products, צור אחד חדש
+  }
+
+  userToUpdate.products.push(newProduct); // הוספת המוצר החדש למערך המוצרים של המשתמש
+
+  newUsers[index] = userToUpdate; // עדכון המערך עם המשתמש המעודכן
+
+  setUserName(newUsers); // עדכון ה-state עם המערך החדש
+}
 const delUser = (index)=>{
   let temp = [...userName];
   temp.splice(index,1)
@@ -98,7 +106,7 @@ const delUser = (index)=>{
   };
   return (
     <div className="App">
-      
+      <h1 id='title'>Sv Bank</h1>
 <HashRouter>
 <Routes>
 
@@ -108,7 +116,7 @@ const delUser = (index)=>{
  <Route path='/register' element = {<SignUp add={addUserName} userName = {userName} />}/>
 
 {userName.map((val,index)=>{
-  return <Route path={`/Transfer${val.fullName}`}  element = {<MoneyTransfer  transferMoney = {transferMoney} id = {val.id}  fullName = {val.fullName} userName = {userName} index = {index}  money = {val.money}      />}             />
+  return <Route path={`/Transfer/${val.fullName}`}  element = {<MoneyTransfer  transferMoney = {transferMoney} id = {val.id}  fullName = {val.fullName} userName = {userName} index = {index}  money = {val.money}      />}             />
 })}
 
 
@@ -119,25 +127,22 @@ const delUser = (index)=>{
 
    
 {userName.map((val,index)=>{
-  return <Route path={`/user${val.fullName}`}  element = {<PageUser products = {val.products} addProducts = {addProducts}  fullName = {val.fullName} password = {val.password}  index = {index} money = {val.money} add = {addUserName}/>}   />
+  return <Route path={`/user/${val.fullName}`}  element = {<PageUser products = {val.products} addProducts = {addProducts}  fullName = {val.fullName} password = {val.password}  index = {index} money = {val.money} add = {addUserName} product = {val.product}/>}   />
 
 })}
 
 {userName.map((val,index)=>{
-  return <Route path={`/action${val.fullName}`}  element = {<Action updateUserMoney = {updateUserMoney} products = {val.products} userName ={userName} addProducts = {addProducts} updateUser = {updateUser} index = {index} money = {val.money} fullName = {val.fullName} />} />
+  return <Route path={`/action/${val.fullName}`}  element = {<Action updateUserMoney = {updateUserMoney} products = {val.products} userName ={userName} addProducts = {addProducts} updateUser = {updateUser} index = {index} money = {val.money} product = {val.product} fullName = {val.fullName} />} />
 
 })}
 
 {userName.map((val,index)=>{
-  return <Route path={`/edit${val.fullName}`} element = {<Edit  products = {val.products} userName = {userName} updateUser = {updateUser}  fullName = {val.fullName} id = {val.id} password = {val.password}  index ={index} money = {val.money}/>}  />
+  return <Route path={`/edit/${val.fullName}`} element = {<Edit  product = {val.product}  products = {val.products} userName = {userName} updateUser = {updateUser}  fullName = {val.fullName} id = {val.id} password = {val.password}  index ={index} money = {val.money}/>}  />
 
-})}
-{userName.map((val,index)=>{
-  return <Route  element = {<Details price={val.price} addProducts = {addProducts} products = {val.products}  fullName = {val.fullName} id = {val.id}   index = {index}    />}           />
 })}
 
 {userName.map((val,index)=>{
-  return <Route path={`/userDeatils${val.fullName}`} element = {<User addProducts = {addProducts} products = {val.products} delUser = {delUser}  fullName = {val.fullName} id = {val.id}   index = {index} money = {val.money} />}                 />
+  return <Route path={`/userDeatils/${val.fullName}`} element = {<User addProducts = {addProducts}  price = {val.price} product = {val.product} products = {val.products} delUser = {delUser}  fullName = {val.fullName} id = {val.id}   index = {index} money = {val.money} userName = {userName} />}                 />
 })}
 
 </Routes>

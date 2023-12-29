@@ -13,7 +13,7 @@ const nav = useNavigate()
   }
 
   return (
-    <div>
+    <div className='div'>
       <h1>Money Transfer</h1>
       <input className='inpt1' onChange={(e) => {setId(e.target.value)}} type="text" placeholder='Enter id Name'/>
       <br />
