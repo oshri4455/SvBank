@@ -12,6 +12,7 @@ import Edit from './component/Edit'
 import {Provider} from './contextApi'
 import User from './component/User';
 import MoneyTransfer from './component/MoneyTransfer';
+import Home from './component/Home';
 
 
 
@@ -110,7 +111,8 @@ const delUser = (index)=>{
 <HashRouter>
 <Routes>
 
-   <Route path='/' element = {<SigninUser add = {addUserName} userName = {userName}/>}  />
+<Route path='/'  element = {<Home           />}     />
+   <Route path='/SigninUser' element = {<SigninUser add = {addUserName} userName = {userName}/>}  />
 
 
  <Route path='/register' element = {<SignUp add={addUserName} userName = {userName} />}/>

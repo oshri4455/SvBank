@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css'
 import { Link } from 'react-router-dom';
 
 const Edit = (props) => {
@@ -41,7 +42,7 @@ const Edit = (props) => {
     setlastPassword(updatedUser.password); // Update the state of the last password
   };
   return (
-    <div id='div1'>
+    <div style={{position:'relative',top:'50px'}} id='div1'>
       <h1>Edit</h1>
         <input className='inpt'  onChange={(e)=>{setlastPassword(e.target.value)}} type="password" placeholder='last Password' value={lastPassword} />
         <br />
@@ -55,7 +56,7 @@ const Edit = (props) => {
         <input className='inpt'  onChange={(e)=>{setMoney(e.target.value)}} type="number" placeholder='Money' value={money} />
         <br />
         <br />
-        <button type='button' onClick={handleFormSubmit}>Update</button>
+        <button id='btn' type='button' onClick={handleFormSubmit}>Update</button>
       
     </div>
   )

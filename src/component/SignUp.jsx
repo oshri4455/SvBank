@@ -60,7 +60,7 @@ return
 }
 else{
   props.add(fullName,Password,confirmPassword,id,money)// רק אם הכל נכון ולא התבצעה עד עכשיו החזרה אז הוא יפעיל את הפונקציה של ההוספה ולאר מכן יעביר לעמוד
-  nav('/')
+  nav('/SigninUser')
 }
    
 
@@ -74,7 +74,9 @@ else{
 
 
   return (
-    <div id='div2'>
+    <div class="centered">
+      <div id='div1' >
+        <div class="content">
         <h1>Register</h1>
         <input className='inpt' onChange={(e)=>{setFullName(e.target.value)}} type="text" placeholder='fullName'  />
         <br />
@@ -92,7 +94,8 @@ else{
         <br />
         <br />
         <button id='buttonSignUp' onClick={createUser}>create</button>
-
+        </div>
+    </div>
     </div>
   )
 }
