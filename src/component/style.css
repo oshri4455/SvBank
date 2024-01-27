@@ -24,7 +24,7 @@ h1{
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    border: 2px solid white; /* קרע שחייב להיות כאן */
+    border: 5px solid white; /* קרע שחייב להיות כאן */
     border-radius: 20px;
   }
   
