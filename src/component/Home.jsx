@@ -40,7 +40,7 @@ const Gallery = () => {
         <span>◄</span>
       </button>
       <div className="text-container">
-        <div style={{color:'lightskyblue'}} className="text">{texts[currentTextIndex]}</div>
+        <div style={{color:'white',fontSize:'30px'}} className="text">{texts[currentTextIndex]}</div>
         <img style={{ width: '1030px', height: '320px', position: 'relative', top: '160px' }} src={imageUrls[currentTextIndex]} alt="Description of the image" />
       </div>
       <button className="next-button" onClick={handleNextClick}>

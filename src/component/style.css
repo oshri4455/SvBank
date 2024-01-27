@@ -43,7 +43,7 @@ h1{
     right: 0;
     bottom: 0;
     background-color: rgb(16, 16, 129);
-    filter: blur(100px); /* הטשטוש של הרקע */
+    filter: blur(50px); /* הטשטוש של הרקע */
     z-index: -1;
     border-radius: 15px; /* עיגול פינות כמו ב־#div1 */
   }
@@ -139,11 +139,23 @@ body {
   text-align: center;
   color: white;
   font-size: 24px; /* גודל הטקסט */
-  border: 1px solid white; /* גבול לטקסט */
+  border: 3px solid white; /* גבול לטקסט */
   border-radius: 10px; /* פינות מעוגלות */
   padding: 20px; /* מרווח פנימי */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* צל מסביב לטקסט */
   background-color: rgba(0, 0, 255, 0.3); /* רקע מטושטש */
+}
+.text::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(16, 16, 129);
+    filter: blur(100px); /* הטשטוש של הרקע */
+    z-index: -1;
+    border-radius: 15px; /* עיגול פינות כמו ב־#div1 */ 
 }
 .table-container {
     width: 80%;
