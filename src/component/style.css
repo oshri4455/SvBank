@@ -407,7 +407,46 @@ h2{
 }
 
 
-
+.table-container {
+    width: 80%;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  .table-header {
+    background-color: #007bff63;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table-row:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-cell {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .details-link {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  .details-link:hover {
+    text-decoration: underline;
+  }
 
     @media(max-width:768px){
         .App{
