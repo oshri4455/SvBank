@@ -22,8 +22,8 @@ export default function (props) {
 
 
 
-
-<table>
+<div id='divTable'>
+<table className='custom-table'>
       <thead>
         <tr>
           <th>Product</th>
@@ -42,7 +42,8 @@ export default function (props) {
   
       </tbody>
     </table>
-    <h3 style={{color:'yellow'}}>Sum Price = {totalPrice}</h3>
+    </div>
+    <h3 style={{color:'yellow',position:'relative',top:'-20px'}}>Sum Price = {totalPrice}</h3>
 <br />
 <br />
 <Link to={'/PageBankai'}><button onClick={()=>{props.delUser(props.index)}}
